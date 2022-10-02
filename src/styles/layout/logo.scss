@@ -1,0 +1,19 @@
+
+.logo {
+  position: fixed;
+  top: 0;
+  padding-top: 80px;
+  left: 80px;
+  z-index: 1;
+  width: 200px;
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: 100vh;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    background: cyan;
+  }
+}

@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: url("../assets/background.png");
+  background-size: cover;
+  font-family: "Odstavec", sans-serif;
+  color: $text-color;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+body, html {
+  scroll-behavior: smooth;
+}

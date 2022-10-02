@@ -1,0 +1,12 @@
+.btn {
+  text-decoration: none;
+  color: $text-color;
+  background: $primary-color;
+  padding: 15px 20px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background: darken($primary-color, 10%);
+  }
+}
