@@ -1,37 +1,86 @@
+@font-face {
+  font-family: Abcdvd;
+  src: url("Abcdvd-Regular.5f2afe2f.otf") format("otf"), url("Abcdvd-Regular.de196d02.ttf");
+}
+
+@font-face {
+  font-family: Odstavec;
+  src: url("Odstavec-Regular.1d2a1a71.otf") format("otf"), url("Odstavec-Regular.3ed1d4ae.ttf");
+}
+
 body {
   height: 100vh;
   width: 100vw;
   scroll-behavior: smooth;
-  background: #000;
+  background: url("background.2eac33cc.png") 0 0 / cover;
   margin: 0;
+  font-family: Odstavec, sans-serif;
   position: relative;
 }
 
+body * {
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  text-align: center;
+  color: green;
+  -webkit-text-stroke: 2px black;
+  letter-spacing: -1px;
+  font-family: Abcdvd, sans-serif;
+  font-size: 62px;
+}
+
 nav {
-  z-index: 3;
+  width: 100vw;
+  height: 80px;
+  z-index: 10;
+  backdrop-filter: blur(3px);
+  border-bottom: 1px solid #0ff;
+  padding: 0 280px;
+  font-family: Abcdvd, sans-serif;
   position: fixed;
-  top: 30px;
-  right: 50px;
+  inset: 0;
 }
 
 nav ul {
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+}
+
+nav li {
+  padding: 0 30px;
+  transition: all .2s ease-in-out;
+  display: flex;
+}
+
+nav li.active a, nav li:hover a {
+  color: red;
+  transform: scale(1.15);
+}
+
+nav li:active {
+  background: green;
 }
 
 nav a {
-  color: #fff;
+  color: #000;
+  text-align: center;
+  width: 100%;
   font-size: 1.6em;
   line-height: 3em;
   text-decoration: none;
+  transition: all .2s ease-in-out;
 }
 
 section {
   z-index: 2;
   width: 100%;
   height: 100%;
-  color: #fff;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -44,6 +93,30 @@ video {
   min-width: 100%;
   position: fixed;
   inset: 0;
+}
+
+.logo {
+  z-index: 1;
+  width: 200px;
+  padding-top: 80px;
+  position: fixed;
+  top: 0;
+  left: 80px;
+}
+
+.logo:before {
+  content: "";
+  width: 1px;
+  height: 100vh;
+  background: #0ff;
+  position: absolute;
+  top: 0;
+  right: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
 }
 
 /*# sourceMappingURL=index.867122b9.css.map */
