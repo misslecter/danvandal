@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/misslecter/danvandal#readme",
   "devDependencies": {
+    "@parcel/packager-raw-url": "2.6.2",
     "@parcel/transformer-sass": "2.6.2",
+    "@parcel/transformer-webmanifest": "2.6.2",
     "parcel": "^2.6.2"
   }
 }
