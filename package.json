@@ -25,5 +25,8 @@
     "@parcel/transformer-sass": "2.6.2",
     "@parcel/transformer-webmanifest": "2.6.2",
     "parcel": "^2.6.2"
+  },
+  "dependencies": {
+    "@lottiefiles/lottie-interactivity": "^1.6.1"
   }
 }

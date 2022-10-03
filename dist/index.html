@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>My First Parcel App</title>
+  <title>DVD</title>
   <link rel="stylesheet" href="/index.867122b9.css">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.69428293.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.8818b031.png">
@@ -40,9 +40,10 @@
 
 <div class="logo">
   <img src="/logo.4bcd4013.svg">
-  <lottie-player src="https://lottie.host/5a2ed957-8642-4b09-acd8-96dd4ba655b5/sW0b8cYYQg.json" background="transparent" speed="1" style="width: 300px; height: 300px" loop="" autoplay=""></lottie-player>
   <!--  <lottie-player src="./assets/animation.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></lottie-player>-->
 </div>
+
+<lottie-player id="firstLottie" src="https://lottie.host/5a2ed957-8642-4b09-acd8-96dd4ba655b5/sW0b8cYYQg.json" background="transparent" speed="1" style="width: 300px; height: 300px" loop="" autoplay=""></lottie-player>
 
 <section id="about" class="about">
   <h1>Kdo je<br>Dan Van Dal</h1>
@@ -90,6 +91,27 @@
 <!-- JavaScripts -->
 <script src="/index.59a40e7a.js" defer=""></script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+
+<script>LottieInteractivity.create({
+    player: "#firstLottie",
+    mode: "scroll",
+    actions: [
+        {
+            visibility: [
+                0,
+                1
+            ],
+            type: "seek",
+            frames: [
+                0,
+                50
+            ]
+        }
+    ]
+});
+
+</script>
 <!-- end: JavaScripts -->
 
 </body>
