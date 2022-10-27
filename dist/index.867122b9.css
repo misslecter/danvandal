@@ -62,54 +62,6 @@ section {
   color: #d5283c;
 }
 
-nav {
-  width: 100vw;
-  height: 80px;
-  z-index: 10;
-  border-bottom: 1px solid #0ff;
-  justify-content: center;
-  align-items: center;
-  padding: 0 280px;
-  font-family: Abcdvd, sans-serif;
-  display: flex;
-  position: fixed;
-  inset: 0;
-}
-
-nav ul {
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-}
-
-nav li {
-  transition: all .2s ease-in-out;
-  display: flex;
-}
-
-nav li.active a, nav li:hover a {
-  color: #d5283c;
-  transform: scale(1.15);
-}
-
-nav li:active {
-  background: #26f550;
-}
-
-nav a {
-  color: #292929;
-  text-align: center;
-  width: 100%;
-  font-size: 1.6em;
-  line-height: 3em;
-  text-decoration: none;
-  transition: all .2s ease-in-out;
-}
-
 .logo {
   z-index: 1;
   width: 200px;
@@ -173,6 +125,49 @@ footer li:hover {
 
 footer li a {
   padding: 0 10px;
+}
+
+.jumbotron {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.jumbotron img {
+  height: 100%;
+}
+
+.jumbotron > div {
+  z-index: 3;
+}
+
+.jumbotron__centaur {
+  height: 90vh;
+  z-index: 2;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.jumbotron__logo {
+  width: 40vw;
+  position: absolute;
+}
+
+.jumbotron__heading, .jumbotron__subheading {
+  transform: rotate(-15deg);
+}
+
+.jumbotron__heading {
+  color: #59936f;
+  z-index: 3;
+  margin-top: 10vh;
+  margin-left: -50px;
+  font-family: Abcdvd, sans-serif;
+  font-size: 64px;
+}
+
+.jumbotron__subheading {
+  color: #d5283c;
+  font-size: 18px;
 }
 
 .about h1 {

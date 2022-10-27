@@ -1,0 +1,44 @@
+.jumbotron {
+  flex-direction: row;
+  align-items: flex-start;
+
+  img {
+    height: 100%;
+  }
+
+  > div {
+    z-index: 3;
+    //  transform: translateX(-40px);
+  }
+
+  &__centaur {
+    height: 90vh;
+    z-index: 2;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &__logo {
+    width: 40vw;
+    position: absolute;
+  }
+
+  // Used in js as well
+  &__heading, &__subheading {
+    transform: rotate(-15deg);
+  }
+
+  &__heading {
+    font-family: $font-family-heading;
+    color: $main-heading-color;
+    font-size: 64px;
+    margin-top: 10vh;
+    margin-left: -50px;
+    z-index: 3;
+  }
+
+  &__subheading {
+    color: $accent-color;
+    font-size: 18px;
+  }
+}

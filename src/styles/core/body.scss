@@ -5,7 +5,7 @@ body {
   width: 100vw;
   background: url("../assets/background.png");
   background-size: cover;
-  font-family: "Odstavec", sans-serif;
+  font-family: $font-family-base;
   color: $text-color;
 
   * {
