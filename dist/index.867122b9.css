@@ -136,7 +136,7 @@ footer li a {
   height: 100%;
 }
 
-.jumbotron > div {
+.jumbotron__content {
   z-index: 3;
 }
 
@@ -145,15 +145,19 @@ footer li a {
   z-index: 2;
   margin-top: auto;
   margin-bottom: auto;
+  position: relative;
 }
 
 .jumbotron__logo {
-  width: 40vw;
-  position: absolute;
+  width: 260px;
+  z-index: 1;
+  position: fixed;
+  top: 30px;
+  left: 30px;
 }
 
 .jumbotron__heading, .jumbotron__subheading {
-  transform: rotate(-15deg);
+  transform: rotate(-11deg);
 }
 
 .jumbotron__heading {

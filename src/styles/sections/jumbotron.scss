@@ -6,26 +6,30 @@
     height: 100%;
   }
 
-  > div {
+  &__content {
     z-index: 3;
     //  transform: translateX(-40px);
   }
 
   &__centaur {
     height: 90vh;
+    position: relative;
     z-index: 2;
     margin-top: auto;
     margin-bottom: auto;
   }
 
   &__logo {
-    width: 40vw;
-    position: absolute;
+    width: 260px;
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    z-index: 1;
   }
 
   // Used in js as well
   &__heading, &__subheading {
-    transform: rotate(-15deg);
+    transform: rotate(-11deg);
   }
 
   &__heading {
