@@ -23,17 +23,18 @@ const logoTargetXPosition = 0;
 const logoTargetYPosition = 0;
 const logoTargetScale = 1;
 
-const logoCurrentXpx = window.innerWidth / 2 + 60;
-const logoCurrentYpx = viewportHeight / 2 - 64;
-const logoCurrentScale = 2.2;
-logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
 
+// todo: use css
+const logoDefaultXpx = window.innerWidth / 2 + 60;
+const logoDefaultYpx = viewportHeight / 2 - 64;
+const logoDefaultScale = 2.2;
+logo.style.transform = `translateX(${logoDefaultXpx}px) translateY(${logoDefaultYpx}px) scale(${logoDefaultScale})`;
 
 // Apply default rotations
 const defaultRotation = `rotate(-11deg)`;
 
 window.addEventListener('scroll', (e) => {
-    const percentageY = window.scrollY * 100 / viewportHeight;
+    const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
 
     // Centaur
     const centaurCurrentXpx = centaurTargetXPosition * percentageY / 100;
@@ -52,24 +53,9 @@ window.addEventListener('scroll', (e) => {
     subheading.style.transform = `${defaultRotation} translateX(${subheadingCurrentXpx}px) translateY(${subheadingCurrentYpx}px)`;
 
     // Logo
-
-    // Keep on top
-    // if (window.scrollY >= logoBoundingRect.top - 30) {
-    //     logo.style.position = 'fixed'
-    //     logo.style.top = `30px`
-    // } else {
-    //     logo.style.position = 'relative'
-    //     logo.style.top = `0px`
-    // }
-    //
-    // const logoCurrentXpx = Math.max(logoTargetXPosition, logoTargetXPosition * percentageY / 100);
-    // const logoCurrentScale = 1 - (logoTargetScale * percentageY / 100);
-    // logo.style.transform = `translateX(${logoCurrentXpx}px) scale(${logoCurrentScale}`;
-
-    // todo
-    // const logoCurrentXpx = logoTargetXPosition * percentageY / 100;
-    // const logoCurrentYpx = logoTargetYPosition * percentageY / 100;
-    // const logoCurrentScale = 1 - (logoTargetScale * percentageY / 100);
-    // logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
+    const logoCurrentXpx = logoDefaultXpx - (percentageY * (logoDefaultXpx - logoTargetXPosition) / 100);
+    const logoCurrentYpx = logoDefaultYpx - (percentageY * (logoDefaultYpx - logoTargetYPosition) / 100);
+    const logoCurrentScale = logoDefaultScale - (percentageY * (logoDefaultScale - logoTargetScale) / 100);
+    logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
 
 })
