@@ -25,6 +25,7 @@
     top: 30px;
     left: 30px;
     z-index: 1;
+    transform: translateX(calc(100vw / 2 + 60px)) translateY(calc(100vh / 2 - 64px)) scale(2.2);
   }
 
   // Used in js as well
