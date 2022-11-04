@@ -8,7 +8,10 @@
 
   &__content {
     z-index: 3;
-    //  transform: translateX(-40px);
+  }
+
+  &__centaur, &__logo, &__heading, &__subheading {
+    transition: transform 0.2s linear;
   }
 
   &__centaur {
@@ -25,6 +28,8 @@
     top: 30px;
     left: 30px;
     z-index: 1;
+
+    // Used in js as well
     transform: translateX(calc(100vw / 2 + 60px)) translateY(calc(100vh / 2 - 64px)) scale(2.2);
   }
 
