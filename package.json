@@ -2,12 +2,11 @@
   "name": "danvandal",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./src/index.html",
     "clean-start": "rm -rf dist/ && parcel",
-    "build": "parcel build ./src/index.html --public-url ./",
+    "build": "parcel build ./src/index.html",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
