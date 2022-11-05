@@ -140,6 +140,10 @@ footer li a {
   z-index: 3;
 }
 
+.jumbotron__centaur, .jumbotron__logo, .jumbotron__heading, .jumbotron__subheading {
+  transition: transform;
+}
+
 .jumbotron__centaur {
   height: 90vh;
   z-index: 2;
