@@ -33,8 +33,7 @@ logo.style.transform = `translateX(${logoDefaultXpx}px) translateY(${logoDefault
 // Apply default rotations
 const defaultRotation = `rotate(-11deg)`;
 
-// if (!isTouchDevice) {
-window.addEventListener('scroll', (e) => {
+const handleJumbotronAnimations = () => {
     const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
 
     // Centaur
@@ -59,7 +58,12 @@ window.addEventListener('scroll', (e) => {
     const logoCurrentScale = logoDefaultScale - (percentageY * (logoDefaultScale - logoTargetScale) / 100);
     logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
 
-})
-// }
+}
 
+if (isTouchDevice) {
+    const body = document.querySelector('body')
+    body.addEventListener('touchmove', handleJumbotronAnimations);
+} else {
+    window.addEventListener('scroll', handleJumbotronAnimations)
+}
 
