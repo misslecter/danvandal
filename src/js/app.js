@@ -33,6 +33,7 @@ logo.style.transform = `translateX(${logoDefaultXpx}px) translateY(${logoDefault
 // Apply default rotations
 const defaultRotation = `rotate(-11deg)`;
 
+heading.innerHTML = isTouchDevice
 if (!isTouchDevice) {
     window.addEventListener('scroll', (e) => {
         const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);

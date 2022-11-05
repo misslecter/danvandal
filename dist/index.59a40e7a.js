@@ -532,6 +532,7 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"8lRBv":[function(require,module,exports) {
+var _isMobile = require("./isMobile");
 const viewportHeight = window.innerHeight;
 // Centaur
 const centaur = document.querySelector('[data-js-selector="centaur"]');
@@ -552,14 +553,14 @@ const logo = document.querySelector('[data-js-selector="logo"]');
 const logoTargetXPosition = 0;
 const logoTargetYPosition = 0;
 const logoTargetScale = 1;
-// todo: use css
 const logoDefaultXpx = window.innerWidth / 2 + 60;
 const logoDefaultYpx = viewportHeight / 2 - 64;
 const logoDefaultScale = 2.2;
 logo.style.transform = `translateX(${logoDefaultXpx}px) translateY(${logoDefaultYpx}px) scale(${logoDefaultScale})`;
 // Apply default rotations
 const defaultRotation = `rotate(-11deg)`;
-window.addEventListener("scroll", (e)=>{
+heading.innerHTML = (0, _isMobile.isTouchDevice);
+if (!(0, _isMobile.isTouchDevice)) window.addEventListener("scroll", (e)=>{
     const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
     // Centaur
     const centaurCurrentXpx = centaurTargetXPosition * percentageY / 100;
@@ -580,6 +581,42 @@ window.addEventListener("scroll", (e)=>{
     const logoCurrentScale = logoDefaultScale - percentageY * (logoDefaultScale - logoTargetScale) / 100;
     logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
 });
+
+},{"./isMobile":"dHm24"}],"dHm24":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isTouchDevice", ()=>isTouchDevice);
+const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["7ZoMj","8lRBv"], "8lRBv", "parcelRequire245d")
 
