@@ -559,8 +559,8 @@ const logoDefaultScale = 2.2;
 logo.style.transform = `translateX(${logoDefaultXpx}px) translateY(${logoDefaultYpx}px) scale(${logoDefaultScale})`;
 // Apply default rotations
 const defaultRotation = `rotate(-11deg)`;
-heading.innerHTML = (0, _isMobile.isTouchDevice);
-if (!(0, _isMobile.isTouchDevice)) window.addEventListener("scroll", (e)=>{
+// if (!isTouchDevice) {
+window.addEventListener("scroll", (e)=>{
     const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
     // Centaur
     const centaurCurrentXpx = centaurTargetXPosition * percentageY / 100;
@@ -580,7 +580,8 @@ if (!(0, _isMobile.isTouchDevice)) window.addEventListener("scroll", (e)=>{
     const logoCurrentYpx = logoDefaultYpx - percentageY * (logoDefaultYpx - logoTargetYPosition) / 100;
     const logoCurrentScale = logoDefaultScale - percentageY * (logoDefaultScale - logoTargetScale) / 100;
     logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
-});
+}) // }
+;
 
 },{"./isMobile":"dHm24"}],"dHm24":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

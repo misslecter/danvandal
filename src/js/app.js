@@ -33,33 +33,33 @@ logo.style.transform = `translateX(${logoDefaultXpx}px) translateY(${logoDefault
 // Apply default rotations
 const defaultRotation = `rotate(-11deg)`;
 
-heading.innerHTML = isTouchDevice
-if (!isTouchDevice) {
-    window.addEventListener('scroll', (e) => {
-        const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
+// if (!isTouchDevice) {
+window.addEventListener('scroll', (e) => {
+    const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
 
-        // Centaur
-        const centaurCurrentXpx = centaurTargetXPosition * percentageY / 100;
-        const centaurCurrentYpx = centaurTargetYPosition * percentageY / 100;
-        const centaurCurrentScale = 1 - (centaurTargetScale * percentageY / 100);
-        centaur.style.transform = `translateX(${centaurCurrentXpx}px) translateY(${centaurCurrentYpx}px) scale(${centaurCurrentScale})`;
+    // Centaur
+    const centaurCurrentXpx = centaurTargetXPosition * percentageY / 100;
+    const centaurCurrentYpx = centaurTargetYPosition * percentageY / 100;
+    const centaurCurrentScale = 1 - (centaurTargetScale * percentageY / 100);
+    centaur.style.transform = `translateX(${centaurCurrentXpx}px) translateY(${centaurCurrentYpx}px) scale(${centaurCurrentScale})`;
 
-        // Heading
-        const headingCurrentXpx = headingTargetXPosition * percentageY / 100;
-        const headingCurrentYpx = headingTargetYPosition * percentageY / 100;
-        heading.style.transform = `${defaultRotation} translateX(${headingCurrentXpx}px) translateY(${headingCurrentYpx}px)`;
+    // Heading
+    const headingCurrentXpx = headingTargetXPosition * percentageY / 100;
+    const headingCurrentYpx = headingTargetYPosition * percentageY / 100;
+    heading.style.transform = `${defaultRotation} translateX(${headingCurrentXpx}px) translateY(${headingCurrentYpx}px)`;
 
-        // Subheading
-        const subheadingCurrentXpx = subheadingTargetXPosition * percentageY / 100;
-        const subheadingCurrentYpx = subheadingTargetYPosition * percentageY / 100;
-        subheading.style.transform = `${defaultRotation} translateX(${subheadingCurrentXpx}px) translateY(${subheadingCurrentYpx}px)`;
+    // Subheading
+    const subheadingCurrentXpx = subheadingTargetXPosition * percentageY / 100;
+    const subheadingCurrentYpx = subheadingTargetYPosition * percentageY / 100;
+    subheading.style.transform = `${defaultRotation} translateX(${subheadingCurrentXpx}px) translateY(${subheadingCurrentYpx}px)`;
 
-        // Logo
-        const logoCurrentXpx = logoDefaultXpx - (percentageY * (logoDefaultXpx - logoTargetXPosition) / 100);
-        const logoCurrentYpx = logoDefaultYpx - (percentageY * (logoDefaultYpx - logoTargetYPosition) / 100);
-        const logoCurrentScale = logoDefaultScale - (percentageY * (logoDefaultScale - logoTargetScale) / 100);
-        logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
+    // Logo
+    const logoCurrentXpx = logoDefaultXpx - (percentageY * (logoDefaultXpx - logoTargetXPosition) / 100);
+    const logoCurrentYpx = logoDefaultYpx - (percentageY * (logoDefaultYpx - logoTargetYPosition) / 100);
+    const logoCurrentScale = logoDefaultScale - (percentageY * (logoDefaultScale - logoTargetScale) / 100);
+    logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
 
-    })
-}
+})
+// }
+
 
