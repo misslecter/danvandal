@@ -34,6 +34,7 @@ logo.style.transform = `translateX(${logoDefaultXpx}px) translateY(${logoDefault
 const defaultRotation = `rotate(-11deg)`;
 
 let didScroll = false;
+heading.innerHTML += '1'
 
 const scrollInProgress = () => {
     didScroll = true
