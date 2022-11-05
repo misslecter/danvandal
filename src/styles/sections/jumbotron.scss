@@ -10,10 +10,6 @@
     z-index: 3;
   }
 
-  &__centaur, &__logo, &__heading, &__subheading {
-    transition: transform 0.2s linear;
-  }
-
   &__centaur {
     height: 90vh;
     position: relative;
