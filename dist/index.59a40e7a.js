@@ -559,28 +559,37 @@ const logoDefaultScale = 2.2;
 logo.style.transform = `translateX(${logoDefaultXpx}px) translateY(${logoDefaultYpx}px) scale(${logoDefaultScale})`;
 // Apply default rotations
 const defaultRotation = `rotate(-11deg)`;
-const handleJumbotronAnimations = ()=>{
-    const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
-    // Centaur
-    const centaurCurrentXpx = centaurTargetXPosition * percentageY / 100;
-    const centaurCurrentYpx = centaurTargetYPosition * percentageY / 100;
-    const centaurCurrentScale = 1 - centaurTargetScale * percentageY / 100;
-    centaur.style.transform = `translateX(${centaurCurrentXpx}px) translateY(${centaurCurrentYpx}px) scale(${centaurCurrentScale})`;
-    // Heading
-    const headingCurrentXpx = headingTargetXPosition * percentageY / 100;
-    const headingCurrentYpx = headingTargetYPosition * percentageY / 100;
-    heading.style.transform = `${defaultRotation} translateX(${headingCurrentXpx}px) translateY(${headingCurrentYpx}px)`;
-    // Subheading
-    const subheadingCurrentXpx = subheadingTargetXPosition * percentageY / 100;
-    const subheadingCurrentYpx = subheadingTargetYPosition * percentageY / 100;
-    subheading.style.transform = `${defaultRotation} translateX(${subheadingCurrentXpx}px) translateY(${subheadingCurrentYpx}px)`;
-    // Logo
-    const logoCurrentXpx = logoDefaultXpx - percentageY * (logoDefaultXpx - logoTargetXPosition) / 100;
-    const logoCurrentYpx = logoDefaultYpx - percentageY * (logoDefaultYpx - logoTargetYPosition) / 100;
-    const logoCurrentScale = logoDefaultScale - percentageY * (logoDefaultScale - logoTargetScale) / 100;
-    logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
+let didScroll = false;
+const scrollInProgress = ()=>{
+    didScroll = true;
 };
-window.addEventListener("scroll", handleJumbotronAnimations);
+const handleJumbotronAnimations = ()=>{
+    if (didScroll) {
+        const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
+        // Centaur
+        const centaurCurrentXpx = centaurTargetXPosition * percentageY / 100;
+        const centaurCurrentYpx = centaurTargetYPosition * percentageY / 100;
+        const centaurCurrentScale = 1 - centaurTargetScale * percentageY / 100;
+        centaur.style.transform = `translateX(${centaurCurrentXpx}px) translateY(${centaurCurrentYpx}px) scale(${centaurCurrentScale})`;
+        // Heading
+        const headingCurrentXpx = headingTargetXPosition * percentageY / 100;
+        const headingCurrentYpx = headingTargetYPosition * percentageY / 100;
+        heading.style.transform = `${defaultRotation} translateX(${headingCurrentXpx}px) translateY(${headingCurrentYpx}px)`;
+        // Subheading
+        const subheadingCurrentXpx = subheadingTargetXPosition * percentageY / 100;
+        const subheadingCurrentYpx = subheadingTargetYPosition * percentageY / 100;
+        subheading.style.transform = `${defaultRotation} translateX(${subheadingCurrentXpx}px) translateY(${subheadingCurrentYpx}px)`;
+        // Logo
+        const logoCurrentXpx = logoDefaultXpx - percentageY * (logoDefaultXpx - logoTargetXPosition) / 100;
+        const logoCurrentYpx = logoDefaultYpx - percentageY * (logoDefaultYpx - logoTargetYPosition) / 100;
+        const logoCurrentScale = logoDefaultScale - percentageY * (logoDefaultScale - logoTargetScale) / 100;
+        logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
+        didScroll = false;
+    }
+    requestAnimationFrame(handleJumbotronAnimations);
+};
+requestAnimationFrame(handleJumbotronAnimations);
+window.addEventListener("scroll", scrollInProgress);
 
 },{"./isMobile":"dHm24"}],"dHm24":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
