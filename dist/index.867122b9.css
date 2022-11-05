@@ -9,13 +9,11 @@
 }
 
 body {
-  width: 100vw;
   color: #292929;
   background: url("background.2eac33cc.png") 0 0 / contain;
   margin: 0;
   font-family: Odstavec, sans-serif;
   position: relative;
-  overflow-x: hidden;
 }
 
 body * {
@@ -128,8 +126,10 @@ footer li a {
 }
 
 .jumbotron {
+  width: 100vw;
   flex-direction: row;
   align-items: flex-start;
+  overflow-x: hidden;
 }
 
 .jumbotron img {
