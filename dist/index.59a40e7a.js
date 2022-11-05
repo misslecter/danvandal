@@ -580,10 +580,7 @@ const handleJumbotronAnimations = ()=>{
     const logoCurrentScale = logoDefaultScale - percentageY * (logoDefaultScale - logoTargetScale) / 100;
     logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
 };
-if (0, _isMobile.isTouchDevice) {
-    const body = document.querySelector("body");
-    body.addEventListener("touchmove", handleJumbotronAnimations);
-} else window.addEventListener("scroll", handleJumbotronAnimations);
+window.addEventListener("scroll", handleJumbotronAnimations);
 
 },{"./isMobile":"dHm24"}],"dHm24":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

@@ -60,10 +60,6 @@ const handleJumbotronAnimations = () => {
 
 }
 
-if (isTouchDevice) {
-    const body = document.querySelector('body')
-    body.addEventListener('touchmove', handleJumbotronAnimations);
-} else {
-    window.addEventListener('scroll', handleJumbotronAnimations)
-}
+window.addEventListener('scroll', handleJumbotronAnimations)
+
 
