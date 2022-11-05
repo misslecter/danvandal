@@ -141,7 +141,7 @@ footer li a {
 }
 
 .jumbotron__centaur, .jumbotron__logo, .jumbotron__heading, .jumbotron__subheading {
-  transition: transform;
+  transition: transform .1s;
 }
 
 .jumbotron__centaur {
