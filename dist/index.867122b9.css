@@ -200,7 +200,7 @@ footer li a {
 
 .about__content {
   line-height: 3.8;
-  transition: line-height 2s;
+  transition: line-height 1.5s;
 }
 
 .about__content.squash {
