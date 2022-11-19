@@ -1,16 +1,17 @@
 .about {
-  h1 {
+  p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 0;
     margin-bottom: 30px;
   }
 
-  p {
-    text-align: center;
-    line-height: 1.6;
-    font-size: 1.2em;
-    margin-top: 0;
-  }
+  &__content {
+    line-height: 3.8;
+    transition: line-height 1s ease;
 
-  .cta {
-    margin-top: 30px;
+    &.squash {
+      line-height: 1.8;
+    }
   }
 }

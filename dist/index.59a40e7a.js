@@ -595,7 +595,15 @@ const handleJumbotronAnimations = ()=>{
     const lineCurrentXpx = lineTargetXPosition * percentageY / 100;
     line.style.transform = `translateX(${lineDefaultXpx + lineCurrentXpx}px)`;
 };
-window.addEventListener("scroll", handleJumbotronAnimations);
+const handleAboutAnimation = ()=>{
+    const about = document.querySelector('[data-js-selector="about"]');
+    const aboutRect = about.getBoundingClientRect();
+    about.classList.toggle("squash", window.scrollY > aboutRect.y);
+};
+window.addEventListener("scroll", ()=>{
+    handleJumbotronAnimations();
+    handleAboutAnimation();
+});
 
 },{"./isMobile":"dHm24"}],"dHm24":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

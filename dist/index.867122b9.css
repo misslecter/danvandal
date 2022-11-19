@@ -191,19 +191,20 @@ footer li a {
   top: 30px;
 }
 
-.about h1 {
-  margin-bottom: 30px;
-}
-
 .about p {
   text-align: center;
   margin-top: 0;
+  margin-bottom: 30px;
   font-size: 1.2em;
-  line-height: 1.6;
 }
 
-.about .cta {
-  margin-top: 30px;
+.about__content {
+  line-height: 3.8;
+  transition: line-height 1s;
+}
+
+.about__content.squash {
+  line-height: 1.8;
 }
 
 /*# sourceMappingURL=index.867122b9.css.map */

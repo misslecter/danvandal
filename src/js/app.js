@@ -77,4 +77,13 @@ const handleJumbotronAnimations = () => {
     line.style.transform = `translateX(${lineDefaultXpx + lineCurrentXpx}px)`;
 }
 
-window.addEventListener('scroll', handleJumbotronAnimations)
+const handleAboutAnimation = () => {
+    const about = document.querySelector("[data-js-selector=\"about\"]")
+    const aboutRect = about.getBoundingClientRect();
+    about.classList.toggle('squash', window.scrollY > aboutRect.y)
+}
+
+window.addEventListener('scroll', () => {
+    handleJumbotronAnimations()
+    handleAboutAnimation()
+})
