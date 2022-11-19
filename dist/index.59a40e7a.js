@@ -583,7 +583,7 @@ const handleJumbotronMobileAnimation = ()=>{
     centaur.style.transition = "transform 1s linear";
     if (window.scrollY > 200) centaur.style.transform = `translateX(${centaurTargetXPosition}px) translateY(${centaurTargetYPosition}px) scale(${centaurTargetScale})`;
 };
-window.addEventListener("scroll", (0, _isMobile.isTouchDevice) ? handleJumbotronMobileAnimation : handleJumbotronAnimations);
+window.addEventListener("scroll", handleJumbotronAnimations);
 
 },{"./isMobile":"dHm24"}],"dHm24":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
