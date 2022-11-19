@@ -20,7 +20,6 @@ const subheadingTargetYPosition = viewportHeight * 0.3;
 
 // Logo
 const logo = document.querySelector("[data-js-selector=\"logo\"]");
-// const logoBoundingRect = logo.getBoundingClientRect();
 const logoTargetXPosition = 0;
 const logoTargetYPosition = 0;
 const logoTargetScale = 1;
@@ -33,44 +32,37 @@ logo.style.transform = `translateX(${logoDefaultXpx}px) translateY(${logoDefault
 // Apply default rotations
 const defaultRotation = `rotate(-11deg)`;
 
-let didScroll = false;
-heading.innerHTML += '1'
-
-const scrollInProgress = () => {
-    didScroll = true
-}
-
 const handleJumbotronAnimations = () => {
-    if (didScroll) {
-        const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
+    const percentageY = Math.min(window.scrollY * 100 / viewportHeight, 100);
 
-        // Centaur
-        const centaurCurrentXpx = centaurTargetXPosition * percentageY / 100;
-        const centaurCurrentYpx = centaurTargetYPosition * percentageY / 100;
-        const centaurCurrentScale = 1 - (centaurTargetScale * percentageY / 100);
-        centaur.style.transform = `translateX(${centaurCurrentXpx}px) translateY(${centaurCurrentYpx}px) scale(${centaurCurrentScale})`;
+    // Centaur
+    const centaurCurrentXpx = centaurTargetXPosition * percentageY / 100;
+    const centaurCurrentYpx = centaurTargetYPosition * percentageY / 100;
+    const centaurCurrentScale = 1 - (centaurTargetScale * percentageY / 100);
+    centaur.style.transform = `translateX(${centaurCurrentXpx}px) translateY(${centaurCurrentYpx}px) scale(${centaurCurrentScale})`;
 
-        // Heading
-        const headingCurrentXpx = headingTargetXPosition * percentageY / 100;
-        const headingCurrentYpx = headingTargetYPosition * percentageY / 100;
-        heading.style.transform = `${defaultRotation} translateX(${headingCurrentXpx}px) translateY(${headingCurrentYpx}px)`;
+    // Heading
+    const headingCurrentXpx = headingTargetXPosition * percentageY / 100;
+    const headingCurrentYpx = headingTargetYPosition * percentageY / 100;
+    heading.style.transform = `${defaultRotation} translateX(${headingCurrentXpx}px) translateY(${headingCurrentYpx}px)`;
 
-        // Subheading
-        const subheadingCurrentXpx = subheadingTargetXPosition * percentageY / 100;
-        const subheadingCurrentYpx = subheadingTargetYPosition * percentageY / 100;
-        subheading.style.transform = `${defaultRotation} translateX(${subheadingCurrentXpx}px) translateY(${subheadingCurrentYpx}px)`;
+    // Subheading
+    const subheadingCurrentXpx = subheadingTargetXPosition * percentageY / 100;
+    const subheadingCurrentYpx = subheadingTargetYPosition * percentageY / 100;
+    subheading.style.transform = `${defaultRotation} translateX(${subheadingCurrentXpx}px) translateY(${subheadingCurrentYpx}px)`;
 
-        // Logo
-        const logoCurrentXpx = logoDefaultXpx - (percentageY * (logoDefaultXpx - logoTargetXPosition) / 100);
-        const logoCurrentYpx = logoDefaultYpx - (percentageY * (logoDefaultYpx - logoTargetYPosition) / 100);
-        const logoCurrentScale = logoDefaultScale - (percentageY * (logoDefaultScale - logoTargetScale) / 100);
-        logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
-        didScroll = false;
-    }
-    requestAnimationFrame(handleJumbotronAnimations);
+    // Logo
+    const logoCurrentXpx = logoDefaultXpx - (percentageY * (logoDefaultXpx - logoTargetXPosition) / 100);
+    const logoCurrentYpx = logoDefaultYpx - (percentageY * (logoDefaultYpx - logoTargetYPosition) / 100);
+    const logoCurrentScale = logoDefaultScale - (percentageY * (logoDefaultScale - logoTargetScale) / 100);
+    logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
 }
 
-requestAnimationFrame(handleJumbotronAnimations);
-window.addEventListener('scroll', scrollInProgress)
+const handleJumbotronMobileAnimation = () => {
+    if (window.scrollY > 200) {
+        centaur.style.transform = `translateX(${centaurTargetXPosition}px) translateY(${centaurTargetYPosition}px) scale(${centaurTargetScale})`;
 
+    }
+}
 
+window.addEventListener('scroll', isTouchDevice ? handleJumbotronMobileAnimation : handleJumbotronAnimations)
