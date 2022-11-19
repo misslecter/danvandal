@@ -580,6 +580,7 @@ const handleJumbotronAnimations = ()=>{
     logo.style.transform = `translateX(${logoCurrentXpx}px) translateY(${logoCurrentYpx}px) scale(${logoCurrentScale})`;
 };
 const handleJumbotronMobileAnimation = ()=>{
+    centaur.style.transition = "transform 1s linear";
     if (window.scrollY > 200) centaur.style.transform = `translateX(${centaurTargetXPosition}px) translateY(${centaurTargetYPosition}px) scale(${centaurTargetScale})`;
 };
 window.addEventListener("scroll", (0, _isMobile.isTouchDevice) ? handleJumbotronMobileAnimation : handleJumbotronAnimations);

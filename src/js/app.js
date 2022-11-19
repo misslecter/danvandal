@@ -59,6 +59,7 @@ const handleJumbotronAnimations = () => {
 }
 
 const handleJumbotronMobileAnimation = () => {
+    centaur.style.transition = 'transform 1s linear'
     if (window.scrollY > 200) {
         centaur.style.transform = `translateX(${centaurTargetXPosition}px) translateY(${centaurTargetYPosition}px) scale(${centaurTargetScale})`;
 
