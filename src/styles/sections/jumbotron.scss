@@ -12,10 +12,6 @@
     z-index: 3;
   }
 
-  &__centaur, &__logo, &__heading, &__subheading {
-    //transition: transform 0.1s ease;
-  }
-
   &__centaur {
     height: 90vh;
     position: relative;
@@ -52,5 +48,14 @@
   &__subheading {
     color: $accent-color;
     font-size: 18px;
+  }
+
+  &__line {
+    width: 2px;
+    height: 100vh;
+    background: $cyan;
+    box-shadow: 0 0 1px black;
+    position: fixed;
+    top: 0;
   }
 }

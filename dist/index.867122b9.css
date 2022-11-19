@@ -175,6 +175,15 @@ footer li a {
   font-size: 18px;
 }
 
+.jumbotron__line {
+  width: 2px;
+  height: 100vh;
+  background: #0ff;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 0 1px #000;
+}
+
 .about h1 {
   margin-bottom: 30px;
 }
