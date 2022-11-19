@@ -563,6 +563,12 @@ const lineRect = line.getBoundingClientRect();
 const lineDefaultXpx = logoRect.x + logoRect.width - lineRect.x;
 const lineTargetXPosition = window.innerWidth;
 line.style.transform = `translateX(${lineDefaultXpx}px)`;
+// Button hire
+const buttonHire = document.querySelector('[data-js-selector="button-hire"]');
+const buttonHireXpx = lineDefaultXpx + window.innerWidth / 2;
+const buttonHireWidth = window.innerWidth - buttonHireXpx;
+buttonHire.style.width = `${buttonHireWidth}px`;
+buttonHire.style.left = `${buttonHireXpx}px`;
 // Apply default rotations
 const defaultRotation = `rotate(-11deg)`;
 const handleJumbotronAnimations = ()=>{
@@ -588,10 +594,6 @@ const handleJumbotronAnimations = ()=>{
     // Line
     const lineCurrentXpx = lineTargetXPosition * percentageY / 100;
     line.style.transform = `translateX(${lineDefaultXpx + lineCurrentXpx}px)`;
-};
-const handleJumbotronMobileAnimation = ()=>{
-    centaur.style.transition = "transform 1s linear";
-    if (window.scrollY > 200) centaur.style.transform = `translateX(${centaurTargetXPosition}px) translateY(${centaurTargetYPosition}px) scale(${centaurTargetScale})`;
 };
 window.addEventListener("scroll", handleJumbotronAnimations);
 

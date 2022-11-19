@@ -184,6 +184,13 @@ footer li a {
   box-shadow: 0 0 1px #000;
 }
 
+.button-hire {
+  max-width: 300px;
+  z-index: 10;
+  position: fixed;
+  top: 30px;
+}
+
 .about h1 {
   margin-bottom: 30px;
 }
