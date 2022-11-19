@@ -66,4 +66,4 @@ const handleJumbotronMobileAnimation = () => {
     }
 }
 
-window.addEventListener('scroll', isTouchDevice ? handleJumbotronMobileAnimation : handleJumbotronAnimations)
+window.addEventListener('scroll', handleJumbotronAnimations)
