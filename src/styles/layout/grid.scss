@@ -1,0 +1,12 @@
+.row {
+  display: flex;
+  gap: 15px;
+
+  .col {
+    flex: 1;
+
+    video {
+      width: 100%;
+    }
+  }
+}

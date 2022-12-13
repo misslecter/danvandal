@@ -1,8 +1,11 @@
-h1, h2 {
+h1 {
   font-family: $font-family-heading;
   text-align: center;
   font-size: 3em;
-  color: $primary-color;
-  -webkit-text-stroke: 2px black;
+  color: $main-heading-color;
   letter-spacing: -1px;
+
+  &--stroked {
+    -webkit-text-stroke: 2px black;
+  }
 }

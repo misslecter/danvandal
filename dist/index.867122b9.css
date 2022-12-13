@@ -24,13 +24,16 @@ body, html {
   scroll-behavior: smooth;
 }
 
-h1, h2 {
+h1 {
   text-align: center;
-  color: #26f550;
-  -webkit-text-stroke: 2px black;
+  color: #59936f;
   letter-spacing: -1px;
   font-family: Abcdvd, sans-serif;
   font-size: 3em;
+}
+
+h1--stroked {
+  -webkit-text-stroke: 2px black;
 }
 
 section {
@@ -123,6 +126,19 @@ footer li:hover {
 
 footer li a {
   padding: 0 10px;
+}
+
+.row {
+  gap: 15px;
+  display: flex;
+}
+
+.row .col {
+  flex: 1;
+}
+
+.row .col video {
+  width: 100%;
 }
 
 .jumbotron {
