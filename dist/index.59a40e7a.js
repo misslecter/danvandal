@@ -532,7 +532,19 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"8lRBv":[function(require,module,exports) {
-var _isMobile = require("./isMobile");
+var _jumbotron = require("./modules/jumbotron");
+var _about = require("./modules/about");
+var _connect = require("./modules/connect");
+window.addEventListener("scroll", ()=>{
+    (0, _jumbotron.handleJumbotronAnimations)();
+    (0, _about.handleAboutAnimation)();
+    (0, _connect.handleConnectAnimations)();
+});
+
+},{"./modules/jumbotron":"cTFGU","./modules/about":"bFeHj","./modules/connect":"lPswq"}],"cTFGU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "handleJumbotronAnimations", ()=>handleJumbotronAnimations);
 const viewportHeight = window.innerHeight;
 // Centaur
 const centaur = document.querySelector('[data-js-selector="centaur"]');
@@ -595,21 +607,6 @@ const handleJumbotronAnimations = ()=>{
     const lineCurrentXpx = lineTargetXPosition * percentageY / 100;
     line.style.transform = `translateX(${lineDefaultXpx + lineCurrentXpx}px)`;
 };
-const handleAboutAnimation = ()=>{
-    const about = document.querySelector('[data-js-selector="about"]');
-    const aboutRect = about.getBoundingClientRect();
-    about.classList.toggle("squash", window.scrollY > aboutRect.y);
-};
-window.addEventListener("scroll", ()=>{
-    handleJumbotronAnimations();
-    handleAboutAnimation();
-});
-
-},{"./isMobile":"dHm24"}],"dHm24":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "isTouchDevice", ()=>isTouchDevice);
-const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -641,6 +638,40 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["7ZoMj","8lRBv"], "8lRBv", "parcelRequire245d")
+},{}],"bFeHj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "handleAboutAnimation", ()=>handleAboutAnimation);
+const about = document.querySelector('[data-js-selector="about"]');
+const aboutRect = about.getBoundingClientRect();
+const handleAboutAnimation = ()=>{
+    about.classList.toggle("squash", window.scrollY > aboutRect.y);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lPswq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "handleConnectAnimations", ()=>handleConnectAnimations);
+const viewportHeight = window.innerHeight;
+const connect = document.querySelector('[data-js-selector="connect"]');
+// Ruka
+const hand = document.querySelector('[data-js-selector="ruka"]');
+const handDefaultXPosition = hand.getBoundingClientRect().x;
+// Kopytko
+const hoof = document.querySelector('[data-js-selector="kopytko"]');
+const hoofDefaultXPosition = hand.getBoundingClientRect().x;
+const handleConnectAnimations = ()=>{
+    const sectionBottom = connect.getBoundingClientRect().bottom - viewportHeight;
+    const percentageY = 100 - Math.min(Math.max(sectionBottom * 100 / connect.getBoundingClientRect().height, 0), 100);
+    // console.log(percentageY)
+    // Ruka
+    const handCurrentXpx = handDefaultXPosition - handDefaultXPosition * percentageY / 100;
+    hand.style.transform = `translateX(${handCurrentXpx}px)`;
+    // Kopytko
+    const hoofCurrentXpx = Math.abs(hoofDefaultXPosition * percentageY / 100);
+    hoof.style.transform = `translateX(${Math.abs(hoofDefaultXPosition) - hoofCurrentXpx}px)`;
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7ZoMj","8lRBv"], "8lRBv", "parcelRequire245d")
 
 //# sourceMappingURL=index.59a40e7a.js.map

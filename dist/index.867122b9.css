@@ -207,4 +207,29 @@ footer li a {
   line-height: 1.8;
 }
 
+.connect {
+  width: 100%;
+  position: relative;
+}
+
+.connect__ruka, .connect__kopytko {
+  width: 50vw;
+  position: fixed;
+  top: 10%;
+}
+
+.connect__ruka svg, .connect__kopytko svg {
+  width: 100%;
+}
+
+.connect__ruka {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.connect__kopytko {
+  right: 0;
+  transform: translateX(100%);
+}
+
 /*# sourceMappingURL=index.867122b9.css.map */
