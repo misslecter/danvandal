@@ -660,16 +660,20 @@ const handDefaultXPosition = hand.getBoundingClientRect().x;
 // Kopytko
 const hoof = document.querySelector('[data-js-selector="kopytko"]');
 const hoofDefaultXPosition = hand.getBoundingClientRect().x;
+// Hvezdicka
+const star = document.querySelector('[data-js-selector="star"]');
 const handleConnectAnimations = ()=>{
     const sectionBottom = connect.getBoundingClientRect().bottom - viewportHeight;
     const percentageY = 100 - Math.min(Math.max(sectionBottom * 100 / connect.getBoundingClientRect().height, 0), 100);
-    // console.log(percentageY)
     // Ruka
     const handCurrentXpx = handDefaultXPosition - handDefaultXPosition * percentageY / 100;
     hand.style.transform = `translateX(${handCurrentXpx}px)`;
     // Kopytko
     const hoofCurrentXpx = Math.abs(hoofDefaultXPosition * percentageY / 100);
     hoof.style.transform = `translateX(${Math.abs(hoofDefaultXPosition) - hoofCurrentXpx}px)`;
+    // Hvezdicka
+    star.style.display = percentageY === 100 ? "block" : "none";
+// todo: show 2x then hide
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7ZoMj","8lRBv"], "8lRBv", "parcelRequire245d")

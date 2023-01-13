@@ -1,11 +1,19 @@
 .connect {
   position: relative;
   width: 100%;
+  overflow: hidden;
+
+  &__star {
+    display: none;
+    transform: translateX(34%) translateY(-3%); // todo: use 100vw gif with right placement
+    position: relative;
+    z-index: 1;
+  }
 
   &__ruka, &__kopytko {
-    width: 50vw;
+    width: 100vw;
     position: fixed;
-    top: 10%;
+    top: 0;
 
     svg {
       width: 100%;
@@ -19,6 +27,6 @@
 
   &__kopytko {
     right: 0;
-    transform: translateX(100%);
+    transform: translateX(200%);
   }
 }
