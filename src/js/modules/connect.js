@@ -15,6 +15,7 @@ const star = document.querySelector("[data-js-selector=\"star\"]");
 export const handleConnectAnimations = () => {
     const sectionBottom = connect.getBoundingClientRect().bottom - viewportHeight
     const percentageY = 100 - Math.min(Math.max(sectionBottom * 100 / connect.getBoundingClientRect().height, 0), 100);
+    const touched = percentageY === 100;
 
     // Ruka
     const handCurrentXpx = handDefaultXPosition - (handDefaultXPosition * percentageY / 100);
@@ -25,6 +26,10 @@ export const handleConnectAnimations = () => {
     hoof.style.transform = `translateX(${Math.abs(hoofDefaultXPosition) - hoofCurrentXpx}px)`;
 
     // Hvezdicka
-    star.style.display = percentageY === 100 ? 'block' : 'none';
+    if (star) {
+        star.style.display = touched ? 'block' : 'none';
+    }
     // todo: show 2x then hide
+
+    [hand, hoof].forEach(part => part.style.position = touched ? 'absolute' : 'fixed')
 }

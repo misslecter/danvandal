@@ -55,7 +55,7 @@ section {
 }
 
 .container--thin {
-  max-width: 600px;
+  max-width: 800px;
   width: 100%;
 }
 
@@ -227,7 +227,9 @@ footer li a {
 
 .connect {
   width: 100%;
-  position: relative;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
   overflow: hidden;
 }
 
@@ -256,6 +258,34 @@ footer li a {
 .connect__kopytko {
   right: 0;
   transform: translateX(200%);
+}
+
+.contact {
+  justify-content: flex-start;
+  padding: 20vh 30px 0;
+}
+
+.contact__details {
+  width: 100%;
+  padding-top: 30vh;
+}
+
+.contact__details ul {
+  width: 100%;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.contact__details ul li {
+  gap: 20px;
+  display: flex;
+}
+
+.contact__details ul li img {
+  width: 30px;
 }
 
 /*# sourceMappingURL=index.867122b9.css.map */
