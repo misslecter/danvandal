@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ben-jerry",
+    "title": "Kravinky pro<br>Ben & Jerry's",
+    "examples": [
+      {
+        "video": "b-and-j-kolbenova.mp4",
+        "description": "Překoplá kravička v metru."
+      },
+      {
+        "video": "b-and-j-ben.mp4",
+        "description": "(Broukání melodie z Requiem za sen)."
+      },
+      {
+        "video": "b-and-j-requiem.mp4",
+        "description": "Kreativita na hraně brand manuálu."
+      }
+    ]
+  }
+]

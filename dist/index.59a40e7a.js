@@ -535,13 +535,14 @@ function hmrAcceptRun(bundle, id) {
 var _jumbotron = require("./modules/jumbotron");
 var _about = require("./modules/about");
 var _connect = require("./modules/connect");
+var _portfolio = require("./modules/portfolio");
 window.addEventListener("scroll", ()=>{
     (0, _jumbotron.handleJumbotronAnimations)();
     (0, _about.handleAboutAnimation)();
     (0, _connect.handleConnectAnimations)();
 });
 
-},{"./modules/jumbotron":"cTFGU","./modules/about":"bFeHj","./modules/connect":"lPswq"}],"cTFGU":[function(require,module,exports) {
+},{"./modules/jumbotron":"cTFGU","./modules/about":"bFeHj","./modules/connect":"lPswq","./modules/portfolio":"3xNC0"}],"cTFGU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "handleJumbotronAnimations", ()=>handleJumbotronAnimations);
@@ -681,6 +682,41 @@ const handleConnectAnimations = ()=>{
     ].forEach((part)=>part.style.position = touched ? "absolute" : "fixed");
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7ZoMj","8lRBv"], "8lRBv", "parcelRequire245d")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3xNC0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _portfolioJson = require("../../portfolio.json");
+var _portfolioJsonDefault = parcelHelpers.interopDefault(_portfolioJson);
+const portfolioContainer = document.querySelector('[data-js-selector="portfolio"]');
+for (const project of (0, _portfolioJsonDefault.default)){
+    const projectTemplate = document.createElement("div");
+    const projectTitle = document.createElement("h1");
+    projectTemplate.innerHTML = `<h1>${project.title}</h1>`;
+    if (project.examples) {
+        const examplesContainer = document.createElement("div");
+        examplesContainer.classList.add("container");
+        examplesContainer.classList.add("container--thin");
+        const row = document.createElement("div");
+        row.classList.add("row");
+        for (const example of project.examples){
+            const video = require(`/${example.video}`);
+            const exampleTemplate = `
+            <div class="col">
+                <video autoplay muted loop>
+                    <source type="video/mp4;" src="/${example.video}"/>
+                </video>
+                <p>${example.description}</p>
+            </div>`;
+            row.insertAdjacentHTML("beforeend", exampleTemplate);
+        }
+        examplesContainer.insertAdjacentElement("beforeend", row);
+        projectTemplate.insertAdjacentElement("beforeend", examplesContainer);
+    }
+    portfolioContainer.insertAdjacentElement("beforeend", projectTemplate);
+}
+
+},{"../../portfolio.json":"1AH4p","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1AH4p":[function(require,module,exports) {
+module.exports = JSON.parse('[{"id":"ben-jerry","title":"Kravinky pro<br>Ben & Jerry\'s","examples":[{"video":"b-and-j-kolbenova.mp4","description":"P\u0159ekopl\xe1 kravi\u010Dka v metru."},{"video":"b-and-j-ben.mp4","description":"(Brouk\xe1n\xed melodie z Requiem za sen)."},{"video":"b-and-j-requiem.mp4","description":"Kreativita na hran\u011B brand manu\xe1lu."}]}]');
+
+},{}]},["7ZoMj","8lRBv"], "8lRBv", "parcelRequire245d")
 
 //# sourceMappingURL=index.59a40e7a.js.map
