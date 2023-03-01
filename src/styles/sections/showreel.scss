@@ -1,0 +1,13 @@
+.showreel {
+  background: url("../assets/papir.png") no-repeat;
+  background-size: cover;
+  padding: 140px 0;
+
+  h1 {
+    background-image: url("../assets/background.png");
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.25px $grey;
+  }
+}

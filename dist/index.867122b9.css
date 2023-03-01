@@ -63,6 +63,10 @@ section {
   color: #d5283c;
 }
 
+video {
+  max-width: 100%;
+}
+
 .logo {
   z-index: 1;
   width: 200px;
@@ -291,6 +295,19 @@ footer li a {
 .portfolio p {
   margin: 1.5em 0;
   font-size: 1.5em;
+}
+
+.showreel {
+  background: url("papir.1c9f012f.png") 0 0 / cover no-repeat;
+  padding: 140px 0;
+}
+
+.showreel h1 {
+  background-image: url("background.2eac33cc.png");
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: .25px #9f9f9f;
 }
 
 /*# sourceMappingURL=index.867122b9.css.map */
