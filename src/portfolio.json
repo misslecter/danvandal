@@ -84,5 +84,23 @@
         "description": "Simulace rozhraní chatu."
       }
     ]
+  },
+  {
+    "id": "clips",
+    "title": "Hudební videoklipy",
+    "examples": [
+      {
+        "video": "clip-pain.mp4",
+        "description": "Edit videa pro Paina včetně rozhejbanejch tagů a plynulých střihů."
+      },
+      {
+        "video": "clip-niki.mp4",
+        "description": "Jeden ze dvou klipů pro Dvojlitrboyzz."
+      },
+      {
+        "video": "clip-young-havel.mp4",
+        "description": "Komplet klip včetně kostýmu."
+      }
+    ]
   }
 ]
