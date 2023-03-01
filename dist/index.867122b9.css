@@ -238,10 +238,14 @@ footer li a {
 }
 
 .connect__star {
+  width: 100vw;
   z-index: 1;
   display: none;
   position: relative;
-  transform: translateX(34%)translateY(-3%);
+}
+
+.connect__star img {
+  width: 100%;
 }
 
 .connect__ruka, .connect__kopytko {

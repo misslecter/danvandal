@@ -29,7 +29,6 @@ export const handleConnectAnimations = () => {
     if (star) {
         star.style.display = touched ? 'block' : 'none';
     }
-    // todo: show 2x then hide
 
     [hand, hoof].forEach(part => part.style.position = touched ? 'absolute' : 'fixed')
 }
