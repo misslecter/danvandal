@@ -675,7 +675,6 @@ const handleConnectAnimations = ()=>{
     hoof.style.transform = `translateX(${Math.abs(hoofDefaultXPosition) - hoofCurrentXpx}px)`;
     // Hvezdicka
     if (star) star.style.display = touched ? "block" : "none";
-    // todo: show 2x then hide
     [
         hand,
         hoof
