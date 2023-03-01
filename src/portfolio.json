@@ -16,5 +16,73 @@
         "description": "Kreativita na hraně brand manuálu."
       }
     ]
+  },
+  {
+    "id": "skoda",
+    "title": "Škoda auto",
+    "examples": [
+      {
+        "video": "skoda-kdo-driv-mrkne.mp4",
+        "description": "Maskováníčko."
+      },
+      {
+        "video": "skoda-enyaq-orange.mp4",
+        "description": "Kinetická typografie."
+      },
+      {
+        "video": "skoda-enyaq-blue.mp4",
+        "description": "Rámeček pro UI IG, safe zóny."
+      }
+    ]
+  },
+  {
+    "id": "rb",
+    "title": "Raiffeisenbank",
+    "examples": [
+      {
+        "video": "rb-domek.mp4",
+        "description": "Maskování a skládání."
+      },
+      {
+        "video": "rb-auto.mp4",
+        "description": "Liquify na text."
+      },
+      {
+        "video": "rb-kytara.mp4",
+        "description": "Wave warp na struny."
+      }
+    ]
+  },
+  {
+    "id": "tesla",
+    "title": "Tesla",
+    "examples": [
+      {
+        "video": "tesla-cisticka.mp4",
+        "description": "Particles a odmaskování textu."
+      },
+      {
+        "video": "tesla-zapadne.mp4",
+        "description": "Vizualizoval jsem slogany."
+      },
+      {
+        "video": "tesla-pitko.mp4",
+        "description": "Naplňovalo mě oživování šablony animace."
+      }
+    ]
+  },
+  {
+    "id": "jobs",
+    "title": "Prace.cz<br>+ Jobs.cz",
+    "examples": [
+      {
+        "video": "prace-cz.mp4",
+        "description": "Lov práce je jeden z mála lovů, který toleruju."
+      },
+      {
+        "video": "jobs-cz.mp4",
+        "description": "Simulace rozhraní chatu."
+      }
+    ]
   }
 ]

@@ -131,7 +131,7 @@ footer li a {
 }
 
 .row {
-  gap: 15px;
+  gap: 30px;
   display: flex;
 }
 
@@ -286,6 +286,11 @@ footer li a {
 
 .contact__details ul li img {
   width: 30px;
+}
+
+.portfolio p {
+  margin: 1.5em 0;
+  font-size: 1.5em;
 }
 
 /*# sourceMappingURL=index.867122b9.css.map */

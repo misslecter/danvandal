@@ -4,7 +4,6 @@ const portfolioContainer = document.querySelector("[data-js-selector=\"portfolio
 
 for (const project of portfolio) {
     const projectTemplate = document.createElement('div');
-    const projectTitle = document.createElement('h1');
     projectTemplate.innerHTML = `<h1>${project.title}</h1>`;
 
     if (project.examples) {

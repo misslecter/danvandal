@@ -689,7 +689,6 @@ var _portfolioJsonDefault = parcelHelpers.interopDefault(_portfolioJson);
 const portfolioContainer = document.querySelector('[data-js-selector="portfolio"]');
 for (const project of (0, _portfolioJsonDefault.default)){
     const projectTemplate = document.createElement("div");
-    const projectTitle = document.createElement("h1");
     projectTemplate.innerHTML = `<h1>${project.title}</h1>`;
     if (project.examples) {
         const examplesContainer = document.createElement("div");
@@ -714,7 +713,7 @@ for (const project of (0, _portfolioJsonDefault.default)){
 }
 
 },{"../../portfolio.json":"1AH4p","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1AH4p":[function(require,module,exports) {
-module.exports = JSON.parse('[{"id":"ben-jerry","title":"Kravinky pro<br>Ben & Jerry\'s","examples":[{"video":"b-and-j-kolbenova.mp4","description":"P\u0159ekopl\xe1 kravi\u010Dka v metru."},{"video":"b-and-j-ben.mp4","description":"(Brouk\xe1n\xed melodie z Requiem za sen)."},{"video":"b-and-j-requiem.mp4","description":"Kreativita na hran\u011B brand manu\xe1lu."}]}]');
+module.exports = JSON.parse('[{"id":"ben-jerry","title":"Kravinky pro<br>Ben & Jerry\'s","examples":[{"video":"b-and-j-kolbenova.mp4","description":"P\u0159ekopl\xe1 kravi\u010Dka v metru."},{"video":"b-and-j-ben.mp4","description":"(Brouk\xe1n\xed melodie z Requiem za sen)."},{"video":"b-and-j-requiem.mp4","description":"Kreativita na hran\u011B brand manu\xe1lu."}]},{"id":"skoda","title":"\u0160koda auto","examples":[{"video":"skoda-kdo-driv-mrkne.mp4","description":"Maskov\xe1n\xed\u010Dko."},{"video":"skoda-enyaq-orange.mp4","description":"Kinetick\xe1 typografie."},{"video":"skoda-enyaq-blue.mp4","description":"R\xe1me\u010Dek pro UI IG, safe z\xf3ny."}]},{"id":"rb","title":"Raiffeisenbank","examples":[{"video":"rb-domek.mp4","description":"Maskov\xe1n\xed a skl\xe1d\xe1n\xed."},{"video":"rb-auto.mp4","description":"Liquify na text."},{"video":"rb-kytara.mp4","description":"Wave warp na struny."}]},{"id":"tesla","title":"Tesla","examples":[{"video":"tesla-cisticka.mp4","description":"Particles a odmaskov\xe1n\xed textu."},{"video":"tesla-zapadne.mp4","description":"Vizualizoval jsem slogany."},{"video":"tesla-pitko.mp4","description":"Napl\u0148ovalo m\u011B o\u017Eivov\xe1n\xed \u0161ablony animace."}]},{"id":"jobs","title":"Prace.cz<br>+ Jobs.cz","examples":[{"video":"prace-cz.mp4","description":"Lov pr\xe1ce je jeden z m\xe1la lov\u016F, kter\xfd toleruju."},{"video":"jobs-cz.mp4","description":"Simulace rozhran\xed chatu."}]}]');
 
 },{}]},["7ZoMj","8lRBv"], "8lRBv", "parcelRequire245d")
 
