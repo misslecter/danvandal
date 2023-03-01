@@ -698,11 +698,10 @@ for (const project of (0, _portfolioJsonDefault.default)){
         const row = document.createElement("div");
         row.classList.add("row");
         for (const example of project.examples){
-            const video = require(`/${example.video}`);
             const exampleTemplate = `
             <div class="col">
                 <video autoplay muted loop>
-                    <source type="video/mp4;" src="/${example.video}"/>
+                    <source type="video/mp4;" src="videos/${example.video}"/>
                 </video>
                 <p>${example.description}</p>
             </div>`;
