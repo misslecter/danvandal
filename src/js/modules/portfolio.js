@@ -16,11 +16,11 @@ for (const project of portfolio) {
         row.classList.add('row');
 
         for (const example of project.examples) {
-            const video = require(`/${example.video}`)
+            // const video = require(`./videos/${example.video}`)
             const exampleTemplate = `
             <div class="col">
                 <video autoplay muted loop>
-                    <source type="video/mp4;" src="/${example.video}"/>
+<!--                    <source type="video/mp4;" src="/${example.video}"/>-->
                 </video>
                 <p>${example.description}</p>
             </div>`

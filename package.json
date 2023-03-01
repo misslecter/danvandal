@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./src/index.html",
-    "clean-start": "rm -rf dist/ && parcel",
+    "clean-start": "rm -rf dist/ && yarn run start",
     "build": "parcel build ./src/index.html",
     "deploy": "gh-pages -d dist"
   },
@@ -23,7 +23,8 @@
     "@parcel/packager-raw-url": "2.6.2",
     "@parcel/transformer-sass": "2.6.2",
     "@parcel/transformer-webmanifest": "2.6.2",
-    "parcel": "^2.6.2"
+    "parcel": "^2.6.2",
+    "parcel-reporter-static-files-copy": "^1.5.0"
   },
   "dependencies": {
     "@lottiefiles/lottie-interactivity": "^1.6.1"
