@@ -3,4 +3,22 @@
     font-size: 1.5em;
     margin: 1.5em 0;
   }
+
+  &__examples {
+    position: relative;
+
+    .aside {
+      position: absolute;
+      top: 0;
+      width: 200px; // todo calculate free space
+
+      &--left {
+        right: 100%;
+      }
+
+      &--right {
+        left: 100%;
+      }
+    }
+  }
 }

@@ -2,6 +2,7 @@
   {
     "id": "ben-jerry",
     "title": "Kravinky pro<br>Ben & Jerry's",
+    "aside": "benandjerrys.svg",
     "examples": [
       {
         "video": "b-and-j-kolbenova.mp4",
@@ -20,6 +21,7 @@
   {
     "id": "skoda",
     "title": "Škoda auto",
+    "aside": "skoda.svg",
     "examples": [
       {
         "video": "skoda-kdo-driv-mrkne.mp4",
@@ -38,6 +40,7 @@
   {
     "id": "rb",
     "title": "Raiffeisenbank",
+    "aside": "raiffesenbank.svg",
     "examples": [
       {
         "video": "rb-domek.mp4",
@@ -56,6 +59,7 @@
   {
     "id": "tesla",
     "title": "Tesla",
+    "aside": "tesla.svg",
     "examples": [
       {
         "video": "tesla-cisticka.mp4",
@@ -74,6 +78,7 @@
   {
     "id": "jobs",
     "title": "Prace.cz<br>+ Jobs.cz",
+    "aside": "praceajobs.svg",
     "examples": [
       {
         "video": "prace-cz.mp4",

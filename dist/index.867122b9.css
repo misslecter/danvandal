@@ -304,6 +304,24 @@ footer li a {
   font-size: 1.5em;
 }
 
+.portfolio__examples {
+  position: relative;
+}
+
+.portfolio__examples .aside {
+  width: 200px;
+  position: absolute;
+  top: 0;
+}
+
+.portfolio__examples .aside--left {
+  right: 100%;
+}
+
+.portfolio__examples .aside--right {
+  left: 100%;
+}
+
 .showreel {
   background: url("papir.1c9f012f.png") 0 0 / cover no-repeat;
   padding: 140px 0;
