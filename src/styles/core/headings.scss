@@ -4,6 +4,7 @@ h1 {
   font-size: 3em;
   color: $main-heading-color;
   letter-spacing: -1px;
+  word-spacing: normal;
 
   &--stroked {
     -webkit-text-stroke: 2px black;
