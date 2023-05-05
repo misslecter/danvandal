@@ -1,0 +1,46 @@
+@font-face {
+  font-family: Abcdvd;
+  src: url("Abcdvd-Regular.5f2afe2f.otf") format("otf"), url("Abcdvd-Regular.de196d02.ttf");
+}
+
+@font-face {
+  font-family: Odstavec;
+  src: url("Odstavec-Regular.1d2a1a71.otf") format("otf"), url("Odstavec-Regular.3ed1d4ae.ttf");
+}
+
+.not-found {
+  height: 100vh;
+  background: url("404-bg.573deae6.png") 0 0 / auto 100% repeat-x;
+  margin: 0;
+  padding: 0;
+}
+
+.not-found * {
+  box-sizing: border-box;
+}
+
+.not-found > div {
+  display: flex;
+}
+
+.not-found__left, .not-found__right {
+  flex: 1;
+  padding: 30px;
+}
+
+.not-found__left h1 {
+  margin: 0;
+  font-family: Odstavec, sans-serif;
+  font-size: 15em;
+}
+
+.not-found__right {
+  align-items: center;
+  display: flex;
+}
+
+.not-found__right img {
+  height: 90vh;
+}
+
+/*# sourceMappingURL=404.8ae9b342.css.map */

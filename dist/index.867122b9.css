@@ -89,19 +89,6 @@ video {
   right: 100%;
 }
 
-.btn {
-  color: #292929;
-  background: #26f550;
-  border-radius: 10px;
-  padding: 15px 20px;
-  text-decoration: none;
-  transition: background-color .2s ease-in-out;
-}
-
-.btn:hover {
-  background: #0ade35;
-}
-
 footer {
   z-index: 10;
   background: #fff;
