@@ -1,0 +1,35 @@
+.animation {
+  &--slide-x {
+    transform: translateX(var(--translate-x));
+    //animation: slideX 1s ease-in-out forwards;
+    //animation-iteration-count: 1;
+    //animation-delay: var(--animation-delay, 0s);
+  }
+
+  &--bounce {
+    animation: bounce 1s ease-in-out;
+    animation-iteration-count: 1;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideX {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(var(--translate-x));
+  }
+}
+

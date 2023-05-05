@@ -70,6 +70,38 @@ video {
   max-width: 100%;
 }
 
+.animation--slide-x {
+  transform: translateX(var(--translate-x));
+}
+
+.animation--bounce {
+  animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-30px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideX {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(var(--translate-x));
+  }
+}
+
 .logo {
   z-index: 1;
   width: 200px;
@@ -297,9 +329,12 @@ footer li a {
 
 .portfolio__examples__content .aside {
   width: 200px;
+  height: 100%;
+  align-items: center;
+  transition: transform 1s ease-out;
+  display: flex;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
 }
 
 .portfolio__examples__content .aside--left {
