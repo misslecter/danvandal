@@ -5,6 +5,7 @@ const portfolioContainer = document.querySelector("[data-js-selector=\"portfolio
 const generateAsideIcon = (index, projectId, icon) => {
     const iconTemplate = document.createElement('div');
     iconTemplate.classList.add('aside');
+    iconTemplate.classList.add(projectId);
 
     // Render image
     iconTemplate.insertAdjacentHTML('beforeend', `<img src="aside/${icon}"/>`);
@@ -30,6 +31,10 @@ for (const [i, project] of portfolio.entries()) {
         examplesContainer.classList.add("container");
         examplesContainer.classList.add("container--thin");
 
+        const examplesContent = document.createElement('div');
+        examplesContent.classList.add("portfolio__examples__content");
+
+        // Row with examples and side icon
         const row = document.createElement('div');
         row.classList.add('row');
 
@@ -39,18 +44,34 @@ for (const [i, project] of portfolio.entries()) {
                 <video autoplay muted loop>
                     <source type="video/mp4;" src="videos/${example.video}"/>
                 </video>
-                <p>${example.description}</p>
             </div>`
 
             row.insertAdjacentHTML('beforeend', exampleTemplate);
         }
 
-        examplesContainer.insertAdjacentElement("beforeend", row);
+        examplesContent.insertAdjacentElement("beforeend", row);
 
         // Add icon next to examples
         if (project.aside) {
-            examplesContainer.insertAdjacentElement('beforeend', generateAsideIcon(i + 1, project.id, project.aside));
+            examplesContent.insertAdjacentElement('beforeend', generateAsideIcon(i + 1, project.id, project.aside));
         }
+
+        // Row with descriptions
+        const descriptionRow = document.createElement('div');
+        descriptionRow.classList.add('row');
+
+        for (const example of project.examples) {
+            const exampleDescription = `
+            <div class="col">
+                <p>${example.description}</p>
+            </div>`
+
+            descriptionRow.insertAdjacentHTML('beforeend', exampleDescription);
+        }
+
+        // Add two rows
+        examplesContainer.insertAdjacentElement("beforeend", examplesContent);
+        examplesContainer.insertAdjacentElement("beforeend", descriptionRow);
 
         projectTemplate.insertAdjacentElement('beforeend', examplesContainer);
     }

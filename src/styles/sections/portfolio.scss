@@ -5,19 +5,28 @@
   }
 
   &__examples {
-    position: relative;
 
-    .aside {
-      position: absolute;
-      top: 0;
-      width: 200px; // todo calculate free space
+    &__content {
+      position: relative;
 
-      &--left {
-        right: 100%;
-      }
+      .aside {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 200px; // todo calculate free space
 
-      &--right {
-        left: 100%;
+        &--left {
+          right: 100%;
+        }
+
+        &--right {
+          left: 100%;
+        }
+
+        // Ben&Jerry's
+        &.ben-jerry {
+
+        }
       }
     }
   }

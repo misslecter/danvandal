@@ -291,21 +291,22 @@ footer li a {
   font-size: 1.5em;
 }
 
-.portfolio__examples {
+.portfolio__examples__content {
   position: relative;
 }
 
-.portfolio__examples .aside {
+.portfolio__examples__content .aside {
   width: 200px;
   position: absolute;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.portfolio__examples .aside--left {
+.portfolio__examples__content .aside--left {
   right: 100%;
 }
 
-.portfolio__examples .aside--right {
+.portfolio__examples__content .aside--right {
   left: 100%;
 }
 

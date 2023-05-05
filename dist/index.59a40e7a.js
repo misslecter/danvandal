@@ -536,13 +536,17 @@ var _jumbotron = require("./modules/jumbotron");
 var _about = require("./modules/about");
 var _connect = require("./modules/connect");
 var _portfolio = require("./modules/portfolio");
+var _portfolioAnimations = require("./modules/portfolio-animations");
+let previousY = window.scrollY;
 window.addEventListener("scroll", ()=>{
     (0, _jumbotron.handleJumbotronAnimations)();
     (0, _about.handleAboutAnimation)();
     (0, _connect.handleConnectAnimations)();
+    (0, _portfolioAnimations.handlePortfolioAnimations)(window.scrollY > previousY);
+    previousY = window.scrollY;
 });
 
-},{"./modules/jumbotron":"cTFGU","./modules/about":"bFeHj","./modules/connect":"lPswq","./modules/portfolio":"3xNC0"}],"cTFGU":[function(require,module,exports) {
+},{"./modules/jumbotron":"cTFGU","./modules/about":"bFeHj","./modules/connect":"lPswq","./modules/portfolio":"3xNC0","./modules/portfolio-animations":"jCQ6f"}],"cTFGU":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "handleJumbotronAnimations", ()=>handleJumbotronAnimations);
@@ -689,6 +693,7 @@ const portfolioContainer = document.querySelector('[data-js-selector="portfolio"
 const generateAsideIcon = (index, projectId, icon)=>{
     const iconTemplate = document.createElement("div");
     iconTemplate.classList.add("aside");
+    iconTemplate.classList.add(projectId);
     // Render image
     iconTemplate.insertAdjacentHTML("beforeend", `<img src="aside/${icon}"/>`);
     if (index % 2 === 0) // left placement
@@ -705,6 +710,9 @@ for (const [i, project] of (0, _portfolioJsonDefault.default).entries()){
         examplesContainer.classList.add("portfolio__examples");
         examplesContainer.classList.add("container");
         examplesContainer.classList.add("container--thin");
+        const examplesContent = document.createElement("div");
+        examplesContent.classList.add("portfolio__examples__content");
+        // Row with examples and side icon
         const row = document.createElement("div");
         row.classList.add("row");
         for (const example of project.examples){
@@ -713,13 +721,25 @@ for (const [i, project] of (0, _portfolioJsonDefault.default).entries()){
                 <video autoplay muted loop>
                     <source type="video/mp4;" src="videos/${example.video}"/>
                 </video>
-                <p>${example.description}</p>
             </div>`;
             row.insertAdjacentHTML("beforeend", exampleTemplate);
         }
-        examplesContainer.insertAdjacentElement("beforeend", row);
+        examplesContent.insertAdjacentElement("beforeend", row);
         // Add icon next to examples
-        if (project.aside) examplesContainer.insertAdjacentElement("beforeend", generateAsideIcon(i + 1, project.id, project.aside));
+        if (project.aside) examplesContent.insertAdjacentElement("beforeend", generateAsideIcon(i + 1, project.id, project.aside));
+        // Row with descriptions
+        const descriptionRow = document.createElement("div");
+        descriptionRow.classList.add("row");
+        for (const example1 of project.examples){
+            const exampleDescription = `
+            <div class="col">
+                <p>${example1.description}</p>
+            </div>`;
+            descriptionRow.insertAdjacentHTML("beforeend", exampleDescription);
+        }
+        // Add two rows
+        examplesContainer.insertAdjacentElement("beforeend", examplesContent);
+        examplesContainer.insertAdjacentElement("beforeend", descriptionRow);
         projectTemplate.insertAdjacentElement("beforeend", examplesContainer);
     }
     portfolioContainer.insertAdjacentElement("beforeend", projectTemplate);
@@ -728,6 +748,33 @@ for (const [i, project] of (0, _portfolioJsonDefault.default).entries()){
 },{"../../portfolio.json":"1AH4p","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1AH4p":[function(require,module,exports) {
 module.exports = JSON.parse('[{"id":"ben-jerry","title":"Kravinky pro<br>Ben & Jerry\'s","aside":"benandjerrys.svg","examples":[{"video":"b-and-j-kolbenova.mp4","description":"P\u0159ekopl\xe1 kravi\u010Dka v metru."},{"video":"b-and-j-ben.mp4","description":"(Brouk\xe1n\xed melodie z Requiem za sen)."},{"video":"b-and-j-requiem.mp4","description":"Kreativita na hran\u011B brand manu\xe1lu."}]},{"id":"skoda","title":"\u0160koda auto","aside":"skoda.svg","examples":[{"video":"skoda-kdo-driv-mrkne.mp4","description":"Maskov\xe1n\xed\u010Dko."},{"video":"skoda-enyaq-orange.mp4","description":"Kinetick\xe1 typografie."},{"video":"skoda-enyaq-blue.mp4","description":"R\xe1me\u010Dek pro UI IG, safe z\xf3ny."}]},{"id":"rb","title":"Raiffeisenbank","aside":"raiffesenbank.svg","examples":[{"video":"rb-domek.mp4","description":"Maskov\xe1n\xed a skl\xe1d\xe1n\xed."},{"video":"rb-auto.mp4","description":"Liquify na text."},{"video":"rb-kytara.mp4","description":"Wave warp na struny."}]},{"id":"tesla","title":"Tesla","aside":"tesla.svg","examples":[{"video":"tesla-cisticka.mp4","description":"Particles a odmaskov\xe1n\xed textu."},{"video":"tesla-zapadne.mp4","description":"Vizualizoval jsem slogany."},{"video":"tesla-pitko.mp4","description":"Napl\u0148ovalo m\u011B o\u017Eivov\xe1n\xed \u0161ablony animace."}]},{"id":"jobs","title":"Prace.cz<br>+ Jobs.cz","aside":"praceajobs.svg","examples":[{"video":"prace-cz.mp4","description":"Lov pr\xe1ce je jeden z m\xe1la lov\u016F, kter\xfd toleruju."},{"video":"jobs-cz.mp4","description":"Simulace rozhran\xed chatu."}]},{"id":"clips","title":"Hudebn\xed videoklipy","examples":[{"video":"clip-pain.mp4","description":"Edit videa pro Paina v\u010Detn\u011B rozhejbanejch tag\u016F a plynul\xfdch st\u0159ih\u016F."},{"video":"clip-niki.mp4","description":"Jeden ze dvou klip\u016F pro Dvojlitrboyzz."},{"video":"clip-young-havel.mp4","description":"Komplet klip v\u010Detn\u011B kost\xfdmu."}]}]');
 
-},{}]},["7ZoMj","8lRBv"], "8lRBv", "parcelRequire245d")
+},{}],"jCQ6f":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "handlePortfolioAnimations", ()=>handlePortfolioAnimations);
+var _portfolioJson = require("../../portfolio.json");
+var _portfolioJsonDefault = parcelHelpers.interopDefault(_portfolioJson);
+const iconsClassNames = (0, _portfolioJsonDefault.default).map((project)=>project.id);
+let previousY = window.scrollY;
+const handlePortfolioAnimations = (isScrollingDown)=>{
+    // const isScrollingDown = window.scrollY > previousY;
+    console.log(isScrollingDown);
+    for (const iconClassName of iconsClassNames){
+        const element = document.querySelector(`.${iconClassName}`);
+        if (!element) return;
+        const elementCenter = element.getBoundingClientRect().y + element.getBoundingClientRect().height / 2;
+        const shouldStartAnimation = elementCenter === window.innerHeight / 2;
+        switch(iconClassName){
+            case "ben-jerry":
+                element.classList.toggle("animation--slide-right", shouldStartAnimation);
+                animateBenJerry(element);
+        }
+    }
+};
+const animateBenJerry = (element)=>{
+// console.log(element)
+};
+
+},{"../../portfolio.json":"1AH4p","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7ZoMj","8lRBv"], "8lRBv", "parcelRequire245d")
 
 //# sourceMappingURL=index.59a40e7a.js.map
