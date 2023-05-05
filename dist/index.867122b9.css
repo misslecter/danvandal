@@ -74,6 +74,11 @@ video {
   transform: translateX(var(--translate-x));
 }
 
+.animation--rotate {
+  transform-origin: center;
+  animation: rotateSlideLeft 5s linear infinite;
+}
+
 .animation--bounce {
   animation: bounce 1s ease-in-out;
 }
@@ -92,13 +97,13 @@ video {
   }
 }
 
-@keyframes slideX {
+@keyframes rotateSlideLeft {
   0% {
-    transform: translateX(0);
+    transform: rotate(0) translateX(0);
   }
 
   100% {
-    transform: translateX(var(--translate-x));
+    transform: rotate(-360deg) translateX(var(--translate-x));
   }
 }
 
